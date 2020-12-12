@@ -8,9 +8,10 @@
 
 public protocol Crashlytics_P {
     
+    associatedtype ThisCrashlytics: Crashlytics_P
     associatedtype ExceptionModel: ExceptionModel_P
     
-    static func crashlytics() -> Self
+    static func crashlytics() -> ThisCrashlytics
     
     func log(_ msg: String)
     func log(format: String, arguments args: CVaListPointer)
