@@ -6,12 +6,11 @@
  extension FirebaseCrashlytics.ExceptionModel: ExceptionModel_P { }
  */
 
-public protocol Crashlytics_P {
+public protocol Crashlytics_P: AnyObject {
     
-    associatedtype ThisCrashlytics: Crashlytics_P
     associatedtype ExceptionModel: ExceptionModel_P
     
-    static func crashlytics() -> ThisCrashlytics
+    static func crashlytics() -> Self
     
     func log(_ msg: String)
     func log(format: String, arguments args: CVaListPointer)
